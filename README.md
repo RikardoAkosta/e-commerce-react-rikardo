@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+visita del sitio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://e-commerce-react-rikardo.netlify.app/#/login
 
-## Available Scripts
 
-In the project directory, you can run:
+Evaluación semana 6 - Proyecto Final: Ecommerce.
 
-### `npm start`
+Pueden hacerlo en squads de hasta tres personas. En ese caso, los tres integrantes del equipo deben subir el mismo entregable a classroom y enviar un comentario privado por classroom nombrando a los miembros de su squad.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Instrucciones:
+Hacer un ecommerce donde el usuario pueda loguearse, ver y filtrar productos, añadirlos al carrito y comprarlos. Utiliza esta API para poder hacer las funcionalidades mencionadas anteriormente: https://documenter.getpostman.com/view/5028918/UVypxw3W#8d80d26a-7c0a-4283-a272-253ae4144624. 
+Importante: 
+Esta API necesita autenticación con token de tipo Bearer para poder consumir los endpoints de “/cart” y “/purchases”. Para practicar, puedes loguearte con:
+Email: mason@gmail.com
+Password: mason1234
+Debes hacer al menos una petición HTTP con redux thunk.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Crear la ruta raíz “/”, en la cuál se listarán todos los productos. 
+Cada producto será un link que llevará a la ruta “/product/:id”, cuyo id dependerá del producto seleccionado. 
+Se listarán las categorías de los productos. Al darles clic, deben filtrar los productos de acuerdo a la categoría seleccionada. 
+Debe haber un input para que el usuario pueda buscar un producto por el nombre. 
+Las querys del endpoint /products te ayudarán con estos filtros.
 
-### `npm test`
+Crear la ruta “/shop/:id”. El id será de uno de los productos de la API. 
+En esta ruta se mostrará toda la información del producto: nombre, imágenes, descripción y precio.
+Debe contener un contador para que el usuario seleccione cuántos productos desea comprar. 
+Debe haber un botón para agregar el producto al carrito. 
+(Ver endpoint “/cart - post”).
+Finalmente, debe haber un listado de productos con la misma categoría del producto seleccionado.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Crear la ruta “/purchases” La cuál será un ruta protegida. Aquí el usuario podrá ver los productos que ha comprado. (consumir endpoint “/purchases”).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Crear la ruta pública “/login”, donde el usuario pueda loguearse en la aplicación
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+Debe de haber una navbar que sea visible en cualquier parte de la aplicación. Debe tener tres botones principales:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Un botón para ir a “/login”
 
-### Advanced Configuration
+Un botón para ir a “/purchases”
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Un botón para abrir un modal dónde ver y comprar el carrito de compras (Consumir el endpoint “/cart”)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+El código debe estar en inglés, pero los comentarios pueden ser en español.
+
+Para el diseño pueden guiarse de aqui: https://dashing-puppy-89779d.netlify.app
+
+Criterios de evaluación:
+Tener las rutas libres (“/” - “/products/:id” - “/login”) y la ruta protegida (“/purchases”) (10pts).
+Consumir con redux thunk un endpoint, como mínimo (15pts).
+En “/” los productos deben ser Links que lleven a la ruta /products/:id (10pts).
+En “/” Los productos se pueden filtrar por nombre y categoría (5pts).
+En “/products/:id” debe haber un contador para que el usuario pueda elegir la cantidad del producto que quiera agregar al carrito (10pts).
+En “/products/:id” debe haber un botón para agregar el producto al carrito (10pts).
+En “/products/:id” deben listarse los productos de la misma categoría del producto mostrado (15pts).
+Modal que muestre los productos del carrito con un botón para comprarlo (10pts).
+El código debe estar en inglés (5pts).
+
+
+Retos opcionales:
+Hacer un filtro por precio en la ruta raíz “/”
+Colocar botones para retirar los productos del carrito
+Agregar una opción para modificar la cantidad llevada en los productos del carrito
+Agregar una ruta pública “/signup” donde el usuario pueda crear una cuenta
+Agregar una ruta privada “/user” donde el usuario pueda ver sus datos.
+
+¡Buena suerte muchachos!
