@@ -39,10 +39,10 @@ const Login = () => {
                     <div className="test-data">
                         <b>Test data</b>
                         <div className="field">
-                            <i className="icon-mail"></i>mason@gmail.com
+                            <i className="fa-solid fa-envelope"></i>mason@gmail.com
                         </div>
                         <div className="field">
-                            <i className="icon-lock"></i>mason1234
+                            <i className="fa-solid fa-lock"></i>mason1234
                         </div>
                     </div>
 

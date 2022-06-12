@@ -39,11 +39,11 @@ const NavBar = () => {
                     </div>
 
                     <button className="icon" onClick={() => navigate("/user")} >
-                        <i className="icon-user"></i>
+                        <i className="fa-solid fa-user"></i>
                     </button>
 
                     <button onClick={openPurchases} className='icon'>
-                        <i className="icon-archive"></i>
+                        <i className="fa-solid fa-box-archive"></i>
                     </button>
 
                     <button 
@@ -51,7 +51,7 @@ const NavBar = () => {
                         onClick={openCart}
                         style={{color: isCartOpen ? 'var(--primary)' : ''}}
                     >
-                        <i className="icon-shopping-cart"></i>
+                        <i className="fa-solid fa-cart-shopping"></i>
                     </button>
                 </nav>
 
